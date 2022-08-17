@@ -1,0 +1,43 @@
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 95%;
+    height: fit-content;
+    padding: 35px 0;
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 40px;
+        height: 45px;
+        cursor: pointer;
+
+        div {
+            @include smoothTransition;
+        }
+
+        .burger-line-1 {
+            width: 100%;
+            height: 5px;
+            border-radius: 50px;
+            background-color: $white;
+            margin-bottom: 5px;
+        }
+
+        .burger-line-2 {
+            width: 75%;
+            height: 5px;
+            border-radius: 50px;
+            background-color: $white;
+            margin-bottom: 5px;
+        }
+
+        .burger-line-3 {
+            width: 45%;
+            height: 5px;
+            border-radius: 50px;
+            background-color: $white;
+        }
+    }
+}

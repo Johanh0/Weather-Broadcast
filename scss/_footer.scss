@@ -1,0 +1,34 @@
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+
+    .switch-body {
+        display: flex;
+        align-items: center;
+        width: 95px;
+        height: 35px;
+        padding: 0 5px;
+        border-radius: 25px;
+        margin-right: 25px;
+        background-image: url("../assets/switchImg/bgLight.svg");
+        background-position: center;
+        background-repeat: no-repeat;        background-size: cover;
+        cursor: pointer;
+        @include smoothTransition;
+
+        .switch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-image: url("../assets/switchImg/switchSun.svg");
+            background-position: center;
+            background-repeat: no-repeat;        background-size: cover;
+            cursor: pointer;
+            @include smoothTransition;
+
+        }
+    }
+}
