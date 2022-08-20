@@ -1,0 +1,114 @@
+.content-section {
+    display: none;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    width: 100%;
+    // @include glassEffect;
+
+    // Content Nav
+    .content-nav {
+        display: flex;
+        width: 80%;
+        padding: 25px;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        // background-color: blue;
+
+        .city-name {
+            font-size: 2rem;
+            font-weight: bold;
+
+            span {
+                font-size: 1.5rem;
+                font-weight: normal;
+            }
+        }
+
+        .fa-plus {
+            font-size: 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $white-hover;
+            }
+        }
+    }
+
+    // Content main
+    .content-main {
+        display: flex;
+        width: 70%;
+        padding: 25px;
+        justify-content: space-around;
+        align-items: center;
+        // background-color: blue;
+
+        .text-temperature {
+            position: relative;
+            font-size: 10rem;
+            font-weight: bold;
+
+            span {
+                font-size: 2rem;
+                position: absolute;
+                top: 15px;
+            }
+        }
+
+
+        img {
+            width: 70%;
+        }
+    }
+
+    // Content Info
+    .content-info {
+        display: flex;
+        width: 100%;
+        padding: 15px;
+        justify-content: space-around;
+        align-items: center;
+        // background-color: blue;
+        font-size: 2rem;
+    }
+}
+
+.week-section {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    @include glassEffect;
+
+    .text-week {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .week-days-container {
+        display: flex;
+        justify-content: space-around;
+        justify-content: center;
+        text-align: center;
+        width: 70%;
+        padding: 15px;
+
+        article {
+            max-width: 100px;
+            font-size: 1.5rem;
+
+            img {
+                width: 80%;
+            }
+
+            .text-day {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

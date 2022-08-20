@@ -1,9 +1,11 @@
 .nav-container {
-    display: flex;
-    justify-content: flex-end;
+    // display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
     max-width: 95%;
     height: fit-content;
-    padding: 35px 0;
+    padding: 35px;
 
     .nav {
         display: flex;

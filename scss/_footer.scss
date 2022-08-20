@@ -1,9 +1,11 @@
 footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    height: 45px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 95%;
+    height: fit-content;
+    padding: 35px;
+
 
     .switch-body {
         display: flex;

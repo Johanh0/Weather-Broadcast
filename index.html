@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Broadcast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
 
     <main>
         
-        <section class="hero">
+        <section class="hero-section">
             <div class="hero-top-side">
                 <img src="./assets/heroImg.svg" alt="Sun with a cloud">
             </div>
@@ -27,8 +28,70 @@
                 <h1>Weather Broadcast</h1>
                 <p><i class="fa-solid fa-calendar-days"></i><span class="hero-date">08/30/2000</span></p>
 
-                <input type="text" placeholder="Search Any City..."> <br>
-                <button>Search City Weather!</button>
+                <input type="text" placeholder="Search Any City..." class="input-text"> <br>
+                <button class="search-btn">Search City Weather!</button>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-nav">
+                <p class="city-name"></p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="content-main">
+                <p class="text-temperature"></p>
+                <img src="./assets/heroImg.svg" alt="">
+            </div>
+            <div class="content-info">
+                <p class="text-weather">
+                    
+                </p>
+
+                <p class="text-humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span class="text-humidity_p"></span>
+                </p>
+
+                <p class="text-wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <span class="text-wind_p"></span>
+                </p>
+
+                <!-- <p class="text-UV">
+                    <i class="fa-regular fa-sun"></i>
+                    <span class="text-UV_p">5</span>
+                </p> -->
+            </div>
+        </section>
+
+        <section class="week-section">
+            <p class="text-week">Weather For The Week</p>
+            <div class="week-days-container">
+                <article>
+                    <img src="./assets/heroImg.svg" alt="">
+                    <p class="text-day">5:00</p>
+                    <p class="text-week-temperature">36°</p>
+                </article>
+                <article>
+                    <img src="./assets/heroImg.svg" alt="">
+                    <p class="text-day">5:00</p>
+                    <p class="text-week-temperature">36°</p>
+                </article>
+                <article>
+                    <img src="./assets/heroImg.svg" alt="">
+                    <p class="text-day">5:00</p>
+                    <p class="text-week-temperature">36°</p>
+                </article>
+                <article>
+                    <img src="./assets/heroImg.svg" alt="">
+                    <p class="text-day">5:00</p>
+                    <p class="text-week-temperature">36°</p>
+                </article>
+                <article>
+                    <img src="./assets/heroImg.svg" alt="">
+                    <p class="text-day">5:00</p>
+                    <p class="text-week-temperature">36°</p>
+                </article>
             </div>
         </section>
 
@@ -38,8 +101,10 @@
             </div>
         </footer>
 
+
         <script src="./js/nav.js"></script>
         <script src="./js/darkMode.js"></script>
+        <script src="./js/script.js"></script>
     </main>
 </body>
 </html>

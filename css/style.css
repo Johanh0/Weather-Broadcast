@@ -10,15 +10,19 @@ html {
   color: #fff; }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(0deg, #418ace 38%, #7dbfff 100%);
   height: 100vh; }
 
 .nav-container {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
   max-width: 95%;
   height: fit-content;
-  padding: 35px 0; }
+  padding: 35px; }
   .nav-container .nav {
     display: flex;
     flex-direction: column;
@@ -46,21 +50,21 @@ body {
       border-radius: 50px;
       background-color: #fff; }
 
-.hero {
+.hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center; }
-  .hero .hero-bottom-side h1 {
+  .hero-section .hero-bottom-side h1 {
     font-size: 4.5rem;
     margin-bottom: 25px; }
-  .hero .hero-bottom-side p {
+  .hero-section .hero-bottom-side p {
     font-size: 2.5rem;
     margin-bottom: 35px; }
-    .hero .hero-bottom-side p .hero-date {
+    .hero-section .hero-bottom-side p .hero-date {
       margin-left: 10px; }
-  .hero .hero-bottom-side input {
+  .hero-section .hero-bottom-side input {
     min-width: 300px;
     text-align: center;
     height: 35px;
@@ -71,9 +75,9 @@ body {
     color: #fff;
     margin-bottom: 55px;
     outline: none; }
-    .hero .hero-bottom-side input::placeholder {
+    .hero-section .hero-bottom-side input::placeholder {
       color: #fff; }
-  .hero .hero-bottom-side button {
+  .hero-section .hero-bottom-side button {
     position: relative;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -88,13 +92,13 @@ body {
     color: #418ACE;
     background-color: white;
     cursor: pointer; }
-    .hero .hero-bottom-side button:hover {
+    .hero-section .hero-bottom-side button:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
-    .hero .hero-bottom-side button:active {
+    .hero-section .hero-bottom-side button:active {
       transform: translateY(-1px);
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-    .hero .hero-bottom-side button::after {
+    .hero-section .hero-bottom-side button::after {
       content: "";
       display: inline-block;
       height: 100%;
@@ -105,18 +109,19 @@ body {
       left: 0;
       z-index: -1;
       transition: all .4s; }
-    .hero .hero-bottom-side button::after {
+    .hero-section .hero-bottom-side button::after {
       background-color: #fff; }
-    .hero .hero-bottom-side button:hover::after {
+    .hero-section .hero-bottom-side button:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
 
 footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  height: 45px; }
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 95%;
+  height: fit-content;
+  padding: 35px; }
   footer .switch-body {
     display: flex;
     align-items: center;
@@ -141,3 +146,82 @@ footer {
       background-size: cover;
       cursor: pointer;
       transition: 0.5s ease-in-out; }
+
+.content-section {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  width: 100%; }
+  .content-section .content-nav {
+    display: flex;
+    width: 80%;
+    padding: 25px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+    .content-section .content-nav .city-name {
+      font-size: 2rem;
+      font-weight: bold; }
+      .content-section .content-nav .city-name span {
+        font-size: 1.5rem;
+        font-weight: normal; }
+    .content-section .content-nav .fa-plus {
+      font-size: 1.5rem;
+      cursor: pointer; }
+      .content-section .content-nav .fa-plus:hover {
+        color: #e9e6e6; }
+  .content-section .content-main {
+    display: flex;
+    width: 70%;
+    padding: 25px;
+    justify-content: space-around;
+    align-items: center; }
+    .content-section .content-main .text-temperature {
+      position: relative;
+      font-size: 10rem;
+      font-weight: bold; }
+      .content-section .content-main .text-temperature span {
+        font-size: 2rem;
+        position: absolute;
+        top: 15px; }
+    .content-section .content-main img {
+      width: 70%; }
+  .content-section .content-info {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem; }
+
+.week-section {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.18); }
+  .week-section .text-week {
+    font-size: 1.5rem;
+    padding: 15px; }
+  .week-section .week-days-container {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    padding: 15px; }
+    .week-section .week-days-container article {
+      max-width: 100px;
+      font-size: 1.5rem; }
+      .week-section .week-days-container article img {
+        width: 80%; }
+      .week-section .week-days-container article .text-day {
+        font-size: 1.5rem;
+        font-weight: bold; }
