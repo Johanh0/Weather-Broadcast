@@ -10,6 +10,7 @@ html {
   color: #fff; }
 
 body {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,10 +156,10 @@ footer {
   width: 100%; }
   .content-section .content-nav {
     display: flex;
-    width: 80%;
+    width: 50%;
     padding: 25px;
-    justify-content: space-around;
-    align-items: center;
+    align-content: center;
+    justify-content: center;
     text-align: center; }
     .content-section .content-nav .city-name {
       font-size: 2rem;
@@ -172,10 +173,10 @@ footer {
       .content-section .content-nav .fa-plus:hover {
         color: #e9e6e6; }
   .content-section .content-main {
-    display: flex;
-    width: 70%;
-    padding: 25px;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    padding: 35px;
     align-items: center; }
     .content-section .content-main .text-temperature {
       position: relative;
@@ -186,7 +187,7 @@ footer {
         position: absolute;
         top: 15px; }
     .content-section .content-main img {
-      width: 70%; }
+      width: 100%; }
   .content-section .content-info {
     display: flex;
     width: 100%;
@@ -200,7 +201,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
@@ -225,3 +226,34 @@ footer {
       .week-section .week-days-container article .text-day {
         font-size: 1.5rem;
         font-weight: bold; }
+
+.aside-nav {
+  display: none;
+  width: 300px;
+  height: 100vh;
+  padding: 25px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10; }
+  .aside-nav .close-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px; }
+    .aside-nav .close-icon i {
+      color: black;
+      font-size: 3rem;
+      cursor: pointer; }
+  .aside-nav .aside-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/asideImagen.jpg");
+    border-radius: 25px;
+    cursor: pointer; }

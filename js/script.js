@@ -10,6 +10,7 @@ const searchBtn = document.querySelector(`.search-btn`);
 const contentSection = document.querySelector(`.content-section`);
 const cityName = document.querySelector(`.city-name`);
 const textTemperature = document.querySelector(`.text-temperature`);
+const imgDescription = document.querySelector(`.img-description`);
 const textWeather = document.querySelector(`.text-weather`);
 const textHumidity = document.querySelector(`.text-humidity_p`);
 const textWind = document.querySelector(`.text-wind_p`);
@@ -67,6 +68,7 @@ function searchingCityDataAPI () {
 
     // Getting the name of the city and cleaning the input
     city = inputElement.value.toLowerCase();
+    localStorage.setItem(`city`, city);
     inputElement.value = ``;
 
     // Calling the API with the city name for catch the lat and lon
@@ -101,7 +103,7 @@ function searchingCityDataAPI () {
             temperature = Math.floor(data.main.temp);
             console.log(`Temperature: ${temperature}`);
 
-            weatherDescription = data.weather[0].description;
+            weatherDescription = data.weather[0].main;
             console.log(weatherDescription);
 
             humidity = data.main.humidity;
@@ -114,7 +116,6 @@ function searchingCityDataAPI () {
 
             // Set values on the right properities
             setValues();
-            getUV();
 
         })
     };
@@ -134,11 +135,61 @@ function setValues () {
     // Set wind
     textWind.innerText = `${windSpeed} km/h`;
 
+    // Set imagen logic
+    switch (weatherDescription) {
+        case `Clear`:
+            imgDescription.src = `../assets/weather-img/clearSky.svg`;
+            imgDescription.alt = `Clear sky imagen`;
+            break;
 
+        case `Clouds`:
+            imgDescription.src = `./assets/weather-img/fewClouds.svg`;
+            imgDescription.alt = `Few clouds imagen`;
+            break;
 
+        case `Clouds`:
+            imgDescription.src = `./assets/weather-img/scatClouds.svg`;
+            imgDescription.alt = `scattered clouds imagen`;
+            break;
 
-    
+        case `Clouds`:
+            imgDescription.src = `./assets/weather-img/fewClouds.svg`;
+            imgDescription.alt = `broken clouds imagen`;
+            break;
 
+        case `Rain`:
+            imgDescription.src = `./assets/weather-img/rain.svg`;
+            imgDescription.alt = `rain imagen`;
+            break;
+
+        case `Thunderstorm`:
+            imgDescription.src = `./assets/weather-img/thunderStorm.svg`;
+            imgDescription.alt = `thunderstorm imagen`;
+            break; 
+            
+        case `Snow`:
+            imgDescription.src = `./assets/weather-img/snow.svg`;
+            imgDescription.alt = `snow imagen`;
+            break; 
+
+        case `Mist`:
+            imgDescription.src = `./assets/weather-img/fewClouds.svg`;
+            imgDescription.alt = `mist imagen`;
+            break;
+
+        default:
+            imgDescription.src = `./assets/weather-img/snow.svg`;
+            imgDescription.alt = `mist imagen`;
+            break;
+    };
 
 };
+
+
+// ----------------------------
+// Save info on localStorage
+const asideCard = document.querySelector(`.aside-card`);
+const asideText = document.querySelector(`.asdie-text`);
+
+
 
