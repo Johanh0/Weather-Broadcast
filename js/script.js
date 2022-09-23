@@ -21,6 +21,11 @@ const weekSection = document.querySelector(`.week-section`);
 
 // Const to assingment
 let city;
+let cityLocalStorage = []
+let cityObj = {
+    id: Date.now(),
+    city
+}
 let state;
 let temperature;
 let humidity;
@@ -30,6 +35,9 @@ let windSpeed;
 // Let for lat and lon
 let latitude;
 let longitude;
+
+// Array for the cities on LocalStorage
+
 
 //-------------------------------------
 
@@ -68,8 +76,14 @@ function searchingCityDataAPI () {
 
     // Getting the name of the city and cleaning the input
     city = inputElement.value.toLowerCase();
-    localStorage.setItem(`city`, city);
+    cityLocalStorage = [...cityLocalStorage, cityObj];
+    new cityObj = { 
+        id: Date.now(),
+        city: city
+    }
+    localStorage.setItem(`city`, JSON.stringify(cityLocalStorage));
     inputElement.value = ``;
+    createAsideCard(city);
 
     // Calling the API with the city name for catch the lat and lon
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKey}`).then( (response) => {
@@ -185,11 +199,36 @@ function setValues () {
 
 };
 
-
 // ----------------------------
 // Save info on localStorage
-const asideCard = document.querySelector(`.aside-card`);
-const asideText = document.querySelector(`.asdie-text`);
+// const asideCard = document.querySelector(`.aside-card`);
+// const asideText = document.querySelector(`.asdie-text`);
 
+
+// Aside Function for cards on the local storage
+function asideCardLocalStorage() {
+
+}
+
+// Aside Function for create new cards
+function createAsideCard(city) {
+
+    const asideNav = document.querySelector(`.aside-nav`);
+
+    // Create Elements
+    const asideCard = document.createElement(`div`);
+    const asideText = document.createElement(`p`);
+
+    // Add classes
+    asideCard.classList.add(`aside-card`);
+    asideText.classList.add(`aside-text`);
+
+    // Insert Text
+    asideText.innerText = city;
+
+    // Append childs
+    asideNav.appendChild(asideCard);
+    asideCard.appendChild(asideText);
+}
 
 
